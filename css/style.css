@@ -1,0 +1,766 @@
+
+/* Style */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Header (intestazione) */
+header {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 6);
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+/* Font per i titoli */
+header h1 {
+    font-size: 2.5rem;
+    color: #F0FFFF;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    color: #F0FFFF;
+    margin-top: 10px;
+}
+
+/* Sezione con l'immagine di sfondo dell'header */
+.header-background {
+   background-image: url('../images/background.jpeg'); /* L'immagine che vuoi usare */
+    background-size: cover; /* Assicura che l'immagine copra tutta la sezione */
+    background-position: center; /* Posiziona l'immagine al centro */
+    height: 200px; /* Altezza dell'area di sfondo */
+    width: 100%; /* Occupa tutta la larghezza della pagina */
+}
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+/* Stile generali */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+
+/* Navbar */
+nav {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Disposizione orizzontale delle categorie della navbar*/
+nav ul {
+    display: flex;                
+    justify-content: space-around; 
+    align-items: center;           
+    list-style: none;              
+    margin: 0;
+    padding: 0;
+}
+
+/* dropdown li */
+nav ul li {
+    position: relative;
+}
+
+/* Stile dei link della navbar */
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+/* Effetto hover per i link */
+nav ul li a:hover {
+    background-color: #444;
+}
+
+/* Dropdown: nascosto di default */
+nav ul li ul.dropdown {
+    display: none;              /* nasconde il sottomenu di default */
+    position: absolute;        
+    top: 100%;                  
+    left: 0;
+    background-color: #1e1e1e;  /* stesso sfondo della navbar */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/*  dropdown quando si passa il mouse sul li */
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+/* Stile per le voci del dropdown */
+nav ul li ul.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+/* Effetto hover per le voci del dropdown */
+nav ul li ul.dropdown li a:hover {
+    background-color: #444;
+}
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 1rem;
+    margin: 20px 0;
+    padding: 12px 15px;
+    background-color: #333;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 5px;
+    display: inline-block;
+    position: sticky;
+}
+
+/* Link breadcrumb */
+.breadcrumbs a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Effetto hover */
+.breadcrumbs a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.breadcrumbs a::after {
+    content: " > ";
+    color: #ffcc00;
+}
+
+.breadcrumbs a:last-child::after {
+    content: ""; 
+}
+article {
+    background-color: #f4f4f4;
+    padding: 5px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+article p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+   /*JS Scorrimento*/
+.marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 85%;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+/* Contenuto principale */
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.content {
+    padding: 20px;
+    text-align: left;
+    color: #555;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Testo dell'articolo */
+.content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.content p {
+    
+font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.card {
+  /* Ombreggiatura */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* hover  */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* padding */
+.container {
+  padding: 2px 16px;
+}
+
+/* Colonne a partire da sinistra */
+
+.col {
+float: left
+;
+}
+.col-25 {
+width: 25%;
+}
+.col-50 {
+width: 50%;
+}
+
+/* Finestre affiancate nella stessa riga */
+.windows-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+}
+
+.window {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.window:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.window a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.window img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.window h2 {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.window p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#timeline-section {
+    margin: 20px;
+    padding: 20px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.year {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    transition: background-color 0.3s ease;
+}
+
+.year:hover {
+    background-color: #ddd;
+}
+
+#timeline-details {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+
+/* Elenco delle edizioni */
+.editions {
+    list-style: decimal;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.editions li {
+    margin-bottom: 10px;
+}
+
+.editions li a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.editions li a:hover {
+    text-decoration: underline;
+}
+
+/* Sezione Contatti / Newsletter */
+#contact {
+  background-color: #f4f4f4;
+  padding: 40px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#contact h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+
+amst
+
+<style>
+        /* Reset di base */
+        body, h1, h2, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Stile generali */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+       
+        }
+
+        /* Contenuto principale */
+        main {
+            padding: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+       
+        }
+
+        .content {
+            padding: 20px;
+            text-align: left;
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Testo dell'articolo */
+        .content h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Tabella Specs */
+       
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+     
+    
+st2012
+/* Reset di base */
+        body, h1, h2, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Stile generali */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+      
+        /* Contenuto principale */
+        main {
+            padding: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+       
+        }
+
+        .content {
+            padding: 20px;
+            text-align: left;
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Testo dell'articolo */
+        .content h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Tabella Dublin Core */
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 750px;
+  position: relative;
+  margin: auto;
+}
+
+/* bottoni avanti e indietro */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* bottone avanti sulla destra */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* hover più effetto grigio */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+/* Caption */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* testo numeri */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* indicatori a forma di dot */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* Sezione Commenti */
+
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Clear floats after containers */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Float images inside the container to the left. Add a right margin, and style the image as a circle */
+.container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Increase the font-size of a span element */
+.container span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+/* Add media queries for responsiveness. This will center both the text and the image inside the container */
+@media (max-width: 500px) {
+  .container {
+    text-align: center;
+  }
+
+  .container img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+}
+
+    </style>
+  
